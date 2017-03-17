@@ -1,10 +1,10 @@
 (ns bykwords-search.yapi
     (:require [org.httpkit.client :as http]
               [clojure.string :as str]
-              [clojure.pprint :as pp]
-              [clojure.data.xml :as xml]
-              [clojure.data.zip.xml :as zipxml]
-              [clojure.zip :as zip]))
+              [clojure.pprint :refer [pprint]]
+              [clojure.data.xml :refer :all]
+              [clojure.data.zip.xml :refer :all]
+              [clojure.zip :refer [xml-zip]]))
 
 (def yapi-params {  :base-url "http://blogs.yandex.ru/"     ;; Base Yandex blogs API URL
                     :method "search"                        ;; method
@@ -29,13 +29,13 @@
     [response]
     (-> response
         :body
-        (xml/parse-str)
-        (zip/xml-zip)
-        (zipxml/xml-> 
+        (clojure.data.xml/parse-str)
+        (clojure.zip/xml-zip)
+        (clojure.data.zip.xml/xml->
             :channel
             :item 
             :link
-            zipxml/text)))
+            clojure.data.zip.xml/text)))
 
 (defn get-domains
     " Get domains "
@@ -54,5 +54,5 @@
               promises (doall (map http/get urls))
               results (doall (map deref promises))]
             (for [response results]
-                (pp/pprint (get-domains response)))))))
+                (pprint (get-domains response)))))))
 

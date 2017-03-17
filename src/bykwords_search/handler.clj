@@ -13,4 +13,5 @@
         {{:strs [keywords]} :params}
         (yapi/get-all keywords))
             ;;(layouts/app "Results" (contents/results keywords))))
+   (route/resources "/")
    (route/not-found (layouts/app "Not Found" "Not Found")))
