@@ -1,17 +1,21 @@
-# bykwords-search
+## bykwords-search
 
-Job test task for Solar security.
+### Yandex blogs API search by keywords.
 
-## Dependencies
+Search by keywords through Yandex blogs API
+Keywords should be entered separated by space " "
+Local server starts on port 5000 (http://localhost:5000)
 
-:dependencies [
-    [org.clojure/clojure "1.8.0"]
-    [ring/ring-defaults "0.2.3"]
-    [ring/ring-devel "1.5.1"]
-    [compojure "1.5.2"]
-    [http-kit "2.2.0"]
-    [hiccup "1.0.5"]]
-
+### Dependencies
+```clojure
+:dependencies [[org.clojure/clojure "1.8.0"]
+                 [ring/ring-defaults "0.2.3"]
+                 [compojure "1.5.2"]
+                 [http-kit "2.2.0"]
+                 [hiccup "1.0.5"]
+                 [org.clojure/data.xml "0.0.8"]
+                 [org.clojure/data.zip "0.1.2"]]
+```
 ## License
 
 Copyright © 2017 lens
