@@ -2,9 +2,9 @@
 
 ### Yandex blogs API search by keywords.
 
-Search by keywords through Yandex blogs API
-Keywords should be entered separated by space " "
-Local server starts on port 5000 (http://localhost:5000)
+Search by keywords through Yandex blogs API.
+Keywords should be entered separated by space " ".
+Local server starts on port 5000 (http://localhost:5000).  
 
 ### Dependencies
 ```clojure
