@@ -10,7 +10,8 @@
                  [http-kit "2.2.0"]
                  [hiccup "1.0.5"]
                  [org.clojure/data.xml "0.0.8"]
-                 [org.clojure/data.zip "0.1.2"]]
+                 [org.clojure/data.zip "0.1.2"]
+                 [cheshire "5.7.0"]]
   :profiles {:dev {:dependencies [[ring/ring-devel "1.5.1"]]}}
   :main bykwords-search.core/-main
   :aot [bykwords-search.core])
