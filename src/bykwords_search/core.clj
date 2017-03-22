@@ -1,4 +1,5 @@
 (ns bykwords-search.core
+  (:gen-class)
   (:require [org.httpkit.server :refer [run-server]]
             [ring.middleware.params :refer :all]
             [ring.middleware.reload :refer [wrap-reload]]
