@@ -9,12 +9,12 @@
 ;; Request params for Yandex blog
 ;; :doclimit keyword as additional parameter for Request
 ;; to limit number of documents to return from API call
-(def yapi-params {  :base-url "http://blogs.yandex.ru/"     ;; Base Yandex blogs API URL
-                    :method "search"                        ;; method
-                    :doclimit 10                            ;; Limit 10 docs to return
-                    :rss "rss"})                            ;; type of response RSS
+(def yapi-params {:base-url "http://blogs.yandex.ru/"     ;; Base Yandex blogs API URL
+                  :method "search"                        ;; method
+                  :doclimit 10                            ;; Limit 10 docs to return
+                  :rss "rss"})                            ;; type of response RSS
 
-;; atom for unique link urls
+;; Atom for unique link urls
 ;; to exclude repeated urls from statistics
 (def unique-urls (atom #{}))
 

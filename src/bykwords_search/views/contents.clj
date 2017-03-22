@@ -3,7 +3,6 @@
     [hiccup.form :as form]))
 
 ;; Views helpers
-
 (defn wrap-container-row
   " Wraps inner into div.container > div.row "
   [inner]
@@ -27,7 +26,6 @@
         [:input {:type "submit" :value "Поиск" :class "form-control btn btn-primary"}]]]])
 
 ;; Views
-
 (defn index
   " Route / "
   [head & content]

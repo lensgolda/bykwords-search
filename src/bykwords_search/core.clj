@@ -13,4 +13,4 @@
       (wrap-json-response)
       (wrap-reload)
       (run-server {:port 5000}))                                        ;; default port starts at 5000
-  (println (str "Server started...Find at http://localhost:5000")))
+  (println (str "Server started...Started at http://localhost:5000")))

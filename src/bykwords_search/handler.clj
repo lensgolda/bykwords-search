@@ -12,8 +12,6 @@
         (layouts/app "Solar test" (contents/index "Поиск по записям и комментариям")))
    (GET "/search"
         {{:strs [keywords]} :params}
-     ;;(layouts/app "Results" (contents/results (yapi/get-statistics keywords)))
-     (response (yapi/get-statistics keywords)))
-     ;;(layouts/app "Results" (contents/results keywords))))
+        (response (yapi/get-statistics keywords)))
    (route/resources "/")
    (route/not-found (layouts/app "Not Found" "Not Found")))
