@@ -36,4 +36,7 @@
 (defn results
   "Results page"
   [content & params]
-  (wrap-container-row (wrap-panel "Results" content)))
+  (wrap-container-row
+    (wrap-panel "Results"
+      (for [[k v] content]
+        [:p k ": " v]))))

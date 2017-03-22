@@ -3,7 +3,8 @@
             [compojure.route :as route]
             [bykwords-search.views.layouts :as layouts]
             [bykwords-search.views.contents :as contents]
-            [bykwords-search.yapi :as yapi]))
+            [bykwords-search.yapi :as yapi]
+            [ring.util.response :refer [response]]))
 
 (defroutes app-routes
    (GET "/"
@@ -11,7 +12,8 @@
         (layouts/app "Solar test" (contents/index "Поиск по записям и комментариям")))
    (GET "/search"
         {{:strs [keywords]} :params}
-        (yapi/get-all keywords))
-            ;;(layouts/app "Results" (contents/results keywords))))
+     ;;(layouts/app "Results" (contents/results (yapi/get-statistics keywords)))
+     (response (yapi/get-statistics keywords)))
+     ;;(layouts/app "Results" (contents/results keywords))))
    (route/resources "/")
    (route/not-found (layouts/app "Not Found" "Not Found")))
