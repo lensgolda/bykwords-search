@@ -44,7 +44,7 @@
         (clojure.zip/xml-zip)
         (clojure.data.zip.xml/xml->
             :channel
-            :item 
+            :item
             :link
             clojure.data.zip.xml/text)))
 
@@ -89,10 +89,8 @@
           queue (partition-all 3 kwords)]
       (for [part queue]
         (let [urls (map #(get-base-url %) part)
-              promises (doall (map http/get urls))
-              results (doall (map deref promises))]
-            (for [response results]
-                (get-domains response))))))
+              promises (doall (map #(http/get % {:timeout 10000} get-domains) urls))]
+              (doall (map deref promises))))))
 
 ;; Global, get statistics
 (defn get-statistics
